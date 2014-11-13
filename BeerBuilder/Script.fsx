@@ -17,6 +17,9 @@ let abvol = abv 1.085 1.01
 
 let ibuCalc = ibu 1.0 10. 0.2697 7.0
 
-NBExtractor.maltAttrTbls()
+let sw = new System.IO.StreamWriter("D:\\temp\\nbMalts.csv")
 
-//let extractedData = extract()
+NBExtractor.fetchMaltAttr()
+    |> Seq.iter(fun x-> sw.WriteLine x)
+    |> sw.Flush
+    |> ignore
