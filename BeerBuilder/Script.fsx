@@ -1,6 +1,7 @@
 ﻿// Learn more about F# at http://fsharp.net. See the 'F# Tutorial' project
 // for more guidance on F# programming.
 
+#r "D:/dev_bin/BeerBuilder/packages/FSharp.Data.2.1.0/lib/net40/FSharp.Data.dll"
 #load "Library1.fs"
 #load "NBExtractor.fs"
 
@@ -16,4 +17,6 @@ let abvol = abv 1.085 1.01
 
 let ibuCalc = ibu 1.0 10. 0.2697 7.0
 
-let extractedData = extract()
+NBExtractor.maltAttrTbls()
+
+//let extractedData = extract()
