@@ -5,10 +5,23 @@
         [<Measure>] type oz
         [<Measure>] type min
         [<Measure>] type gal
-    
+
+        //gc = grain color
+        //weight = grain weight in lbs
+        //vol = batch volume in gal
+        let mcu (gc:float) (weight:float) (vol:float) =
+            (gc * weight) /  vol
+
+        let srm_color mcu =
+            1.4922 * (mcu**0.6859)
+
         //L = degrees lovibond
         let srm L = 
             1.35 * L - 0.6
+
+        //european brewing convention
+        let ebc srm =
+            1.97 * srm
 
         let lovibond srm = 
             (srm + 0.6) / 1.35
