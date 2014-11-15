@@ -2,17 +2,32 @@
 
     module Functions =
     
+        //ounce
         [<Measure>] type oz
+        //minute
         [<Measure>] type min
+        //gallon
         [<Measure>] type gal
+        //lovibond
+        [<Measure>] type L
+        //pounds
+        [<Measure>] type lbs
 
         //gc = grain color
         //weight = grain weight in lbs
         //vol = batch volume in gal
-        let mcu (gc:float) (weight:float) (vol:float) =
-            (gc * weight) /  vol
+        //(gc:float) (weight:float)
+        let mcu (arr:(float<L>*float<lbs>)[]) (vol:float<gal>) =
+            let total =
+                arr |> 
+                    Seq.map(fun x-> 
+                                let gc, weight = x
+                                gc*weight) |>
+                                Seq.sum
+            total / vol
 
-        let srm_color mcu =
+        
+        let srm_color mcu:float<L lbs/gal> =
             1.4922 * (mcu**0.6859)
 
         //L = degrees lovibond
