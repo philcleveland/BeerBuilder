@@ -17,7 +17,7 @@
         //weight = grain weight in lbs
         //vol = batch volume in gal
         //(gc:float) (weight:float)
-        let mcu (arr:(float<L>*float<lbs>)[]) (vol:float<gal>) =
+        let mcu (arr:(float*float)[]) (vol:float) =
             let total =
                 arr |> 
                     Seq.map(fun x-> 
@@ -27,7 +27,7 @@
             total / vol
 
         
-        let srm_color mcu:float<L lbs/gal> =
+        let srm_color mcu:float =
             1.4922 * (mcu**0.6859)
 
         //L = degrees lovibond
