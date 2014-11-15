@@ -1,0 +1,10 @@
+﻿<Window x:Class="BrewDay.WPF.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="4" Margin="50">
+            <Canvas Background="{Binding SRMColor}" />
+        </Border>
+    </Grid>
+</Window>
