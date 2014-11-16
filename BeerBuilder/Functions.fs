@@ -1,9 +1,8 @@
 ﻿namespace BeerBuilder
 
-    
-
     module Functions =
-    
+        open Domain
+            
         let srmColorLookup =
             [|
                 (1,0xffe699);(2,0xffd878);(3,0xffca5a);(4,0xffbf42);(5,0xfbb123);(6,0xf8a600);(7,0xf39300);(8,0xea8f00);(9,0xe58500);(10,0xde7c00);
@@ -27,11 +26,11 @@
         //weight = grain weight in lbs
         //vol = batch volume in gal
         //(gc:float) (weight:float)
-        let mcu (arr:(float*float)[]) (vol:float) =
+        let mcu (arr:Fermentable[]) (vol:float) =
             let total =
                 arr |> 
                     Seq.map(fun x-> 
-                                let gc, weight = x
+                                let gc, weight = x.Color, x.Weight
                                 gc*weight) |>
                                 Seq.sum
             total / vol
@@ -39,6 +38,12 @@
         
         let srm_color mcu:float =
             1.4922 * (mcu**0.6859)
+
+        let GetSRMDisplayColor (arr:Fermentable[]) (vol:float) =
+            mcu arr vol |>
+                srm_color |>
+                    int |>
+                        srmColorLookup.TryFind
 
         //L = degrees lovibond
         let srm L = 
