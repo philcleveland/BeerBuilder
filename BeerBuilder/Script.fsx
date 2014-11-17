@@ -2,7 +2,8 @@
 // for more guidance on F# programming.
 
 #r "D:/dev_bin/BeerBuilder/packages/FSharp.Data.2.1.0/lib/net40/FSharp.Data.dll"
-#load "Library1.fs"
+#load "Domain.fs"
+#load "Functions.fs"
 #load "NBExtractor.fs"
 
 open BeerBuilder
