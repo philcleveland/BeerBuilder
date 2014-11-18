@@ -60,8 +60,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FermentableTileView.xaml.cs">
+      <DependentUpon>FermentableTileView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FermentableViewModel.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="Ingredient.cs" />
+    <Page Include="FermentableTileView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
