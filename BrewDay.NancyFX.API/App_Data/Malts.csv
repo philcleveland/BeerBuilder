@@ -1,0 +1,122 @@
+Name, Type, PP, LowerL, UpperL
+2-Row Malt,Grain,35.8,2,2
+6-Row Malt,Grain,34.8,2,2
+Acid Malt,Grain,26.9,3,3
+Acidulated Malt,Grain,34.5,3,3
+Amber Candi Sugar,Sugar,36,75,75
+Amber Dry Malt Extract,Dry Extract,43.7,10,10
+Amber Liquid Malt Extract,Extract,36.8,10,10
+Amber Malt,Grain,34.8,22,22
+Aromatic,Grain,34.5,4,4
+Beet Sugar,Sugar,46,0,0
+Belgian Aromatic,Grain,35.8,19,26
+Belgian Biscuit Malt,Grain,35.8,23,24.5
+Belgian Pilsner 2-Row,Grain,35.8,2,2
+Belgian Wheat,Grain,36.8,2,2
+Black 2-row or BlackPrinz,Grain,34.5,500,500
+Black Barley,Grain,24.9,500,500
+Black Patent Malt,Grain,24.9,500,500
+Brown Malt,Grain,31.8,65,65
+Brumalt,Grain,32.8,23,23
+CaraAroma,Grain,34.8,130,130
+Carafa I,Grain,31.8,300,375
+Carafa II,Grain,31.8,430,430
+Carafa III,Grain,31.8,490,560
+Caramel Wheat Malt,Grain,34.8,46,46
+CaraMunich,Grain,32.8,56,56
+CaraMunich I,Grain,34.5,40,40
+CaraPils,Grain,32.8,2,2
+CaraRed,Grain,34.8,20,20
+Carastan 15,Grain,33.8,15,15
+Carastan 35,Grain,33.8,35,35
+CaraVienna,Grain,33.9,22,22
+Chocolate Malt,Grain,33.9,350,350
+Chocolate Rye Malt,Grain,30.9,250,250
+Chocolate Wheat Malt,Grain,32.8,400,400
+Clear Candi Sugar,Sugar,36,0.5,0.5
+Corn Grits,Adjunct,36.8,1,1
+Corn Sugar (Dextrose),Sugar,46,0,0
+Corn Syrup,Sugar,36,1,1
+Crushed Amber Crystal Malt,Grain,34.5,10,10
+Crystal 10,Grain,33.8,10,10
+Crystal 120,Grain,33.8,120,120
+Crystal 150,Grain,34.8,150,150
+Crystal 20,Grain,33.8,20,20
+Crystal 30,Grain,33.8,30,30
+Crystal 40,Grain,33.8,40,40
+Crystal 60,Grain,33.8,60,60
+Crystal 75,Grain,34.5,75,75
+Crystal 80,Grain,33.8,80,80
+Crystal 90,Grain,33.8,90,90
+Dark Brown Sugar,Sugar,46,50,50
+Dark Candi Sugar,Sugar,36,275,275
+Dark Candi Syrup,Sugar,34.5,95,95
+Dark Dry Malt Extract,Dry Extract,43.7,30,30
+Dark Liquid Malt Extract,Extract,36.8,30,30
+Dark Wheat,Grain,38.8,9,9
+Demerera Sugar,Sugar,46,2,2
+Dextrine Malt,Grain,32.8,2,2
+Diced Mango,Adjunct,34.5,4,4
+English Mild,Grain,36.8,4,4
+Extra Light Dry Malt Extract,Dry Extract,43.7,1,1
+Extra Light Liquid Malt Extract,Extract,36.8,1,1
+Flaked Barley,Adjunct,32.2,1.7,1.7
+Flaked Corn,Adjunct,36.8,1.3,1.3
+Flaked Oats,Adjunct,36.8,1,1
+Flaked Rice,Adjunct,32.2,1,1
+Flaked Rye,Adjunct,36,2,2
+Flaked Wheat,Adjunct,35.4,1.6,1.6
+Gambrinus Honey Malt,Grain,36.8,25,25
+German Pilsner 2-Row,Grain,36.8,2,2
+German Wheat,Grain,38.8,2,2
+Golden Promise,Grain,37.3,2,2
+Gold malt syrup,Extract,34.5,2,2
+Home roasted Amber,Grain,34.5,35,35
+Home roasted Brown,Grain,34.5,175,175
+Honey,Sugar,34.5,1,1
+Invert Sugar,Sugar,46,0,0
+Lager Malt,Grain,37.8,2,2
+Light Brown Sugar,Sugar,46,8,8
+Light Dry Malt Extract,Dry Extract,43.7,4,4
+Light Liquid Malt Extract,Extract,36.8,4,4
+Malted Oats,Grain,36.8,1,1
+Maple Syrup,Sugar,30,35,35
+Maris Otter,Grain,37.8,3,3
+Melanoidin Malt,Grain,36.8,20,20
+Michigan Pale Ale Wort from Bell's,Grain,34.5,8,8
+Midnight Wheat,Grain,34.5,550,550
+Milk Sugar (Lactose),Sugar,35,0,0
+Molasses,Sugar,36,80,80
+Munich 10,Grain,34.8,10,10
+Munich 20,Grain,34.8,20,20
+Munich Dry Malt Extract,Dry Extract,43.7,8,8
+Munich Liquid Malt Extract,Extract,36.8,8,8
+Munich Malt,Grain,36.8,9,9
+Munton's Dark Hopped Liquid Malt Extract,Extract,34.5,55,55
+Orange Blossom Honey,Sugar,34.5,4,4
+Peated Malt,Grain,33.9,3,3
+Pilsen Dry Malt Extract,Dry Extract,43.7,2,2
+Pilsen Liquid Malt Extract,Extract,36.8,2,2
+Pumpkin Chunks,Adjunct,34.5,5,5
+Raw Barley,Adjunct,28,2,2
+Rice Hulls,Adjunct,34.5,0,0
+Rice Syrup,Sugar,46,1,1
+Roasted Barley,Grain,24.9,300,300
+Rye malt,Grain,34.5,3.5,3.5
+Smoked Malt,Grain,36.8,9,9
+Special B,Grain,29.9,180,180
+Special Roast,Grain,32.8,50,50
+Table Sugar (Sucrose),Sugar,46,1,1
+Toasted Malt,Grain,28.9,5,5
+Torrefied Barley,Adjunct,36.3,2,2
+Torrefied Wheat,Adjunct,34.5,1.7,1.7
+Tupelo Honey,Adjunct,34.5,5,5
+Turbinado (Raw Sugar),Sugar,44,10,10
+UK Pilsner 2-Row,Grain,35.8,1,1
+Victory Malt,Grain,33.9,28,28
+Vienna Malt,Grain,35.8,4,4
+Wheat Dry Malt Extract,Dry Extract,43.7,3,3
+Wheat Liquid Malt Extract,Extract,36.8,3,3
+Wheat Malt Extract,Extract,34.5,20,20
+White Sorghum Syrup,Extract,34.5,3,3
+White Wheat,Grain,39.9,2,2

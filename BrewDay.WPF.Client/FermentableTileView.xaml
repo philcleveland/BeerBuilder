@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="BrewDay.WPF.Client.FermentableTileView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="weight" Text="{Binding Weight}"/>
+        <TextBlock Grid.Column="1" x:Name="name" Text="{Binding Ingredient}"/>
+    </Grid>
+</UserControl>

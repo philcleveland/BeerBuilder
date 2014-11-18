@@ -22,6 +22,7 @@ namespace BrewDay.WPF.Client
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainWindowViewModel _vm;
         public MainWindow()
         {
             InitializeComponent();
@@ -32,8 +33,22 @@ namespace BrewDay.WPF.Client
             ingrediants.Add(new BeerBuilder.Domain.Fermentable(23.75, 0.1875));
 
             var color = BeerBuilder.Functions.GetSRMDisplayColor(ingrediants.ToArray(), 5.0);
+            _vm = new MainWindowViewModel(color.Value);
+            this.DataContext = _vm;
 
-            this.DataContext = new MainWindowViewModel(color.Value);
+            this.getIng.Click += getIng_Click;
         }
+
+        void getIng_Click(object sender, RoutedEventArgs e)
+        {
+            _vm.GetIngredients();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
     }
 }

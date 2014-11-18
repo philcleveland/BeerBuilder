@@ -3,7 +3,35 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Border BorderBrush="Black" BorderThickness="4" Margin="50">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="getIng">Get</Button>
+            <Button x:Name="addIng" Command="{Binding AddIngredientCmd}">Add</Button>
+            <Button x:Name="remIng">Remove</Button>
+        </StackPanel>
+        <ListBox Grid.Row="1" ItemsSource="{Binding Ingredients}" SelectedItem="{Binding SelectedIngredient}">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel></StackPanel>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}"/>
+                    </StackPanel>
+                    <!--<Button Margin="1" Content="{Binding Name}" Height="53" Background="{Binding Color}" HorizontalAlignment="Right" Width="79" 
+                            Command="{Binding DataContext.ShowProductCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}}" 
+                            CommandParameter="{Binding}">
+                    </Button>-->
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Border Grid.Row="2" BorderBrush="Black" BorderThickness="4" Margin="50">
             <Canvas Background="{Binding SRMColor}" />
         </Border>
     </Grid>
