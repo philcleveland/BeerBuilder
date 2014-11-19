@@ -94,6 +94,7 @@
     <Compile Include="IngredientDocumentReader.cs" />
     <Compile Include="IngredientDocumentWriter.cs" />
     <Compile Include="Models\Ingredient.cs" />
+    <Compile Include="Models\Style.cs" />
     <Compile Include="Modules\CalculatorModule.cs" />
     <Compile Include="Modules\HomeModule.cs" />
     <Compile Include="Models\Recipe.cs" />

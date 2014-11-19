@@ -10,10 +10,10 @@ namespace BrewDay.NancyFX.API.Modules
 {
     public class IngredientModule : NancyModule
     {
-        public IngredientModule(IDocumentSession session)
+        public IngredientModule(IAsyncDocumentSession session)
             :base("brewdayApi/ingredients")
         {
-            Get["/"] = p =>
+            Get["/", true] = async (x,y) =>
             {
                 //return a doc with links to:
                 //get
@@ -22,8 +22,7 @@ namespace BrewDay.NancyFX.API.Modules
                 //self
 
                 //convert to collection+json
-                var malts = session.Query<Ingredient>();
-                return malts.ToList();
+                return await session.Query<Ingredient>().ToListAsync();
             };
         }
     }

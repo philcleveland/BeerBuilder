@@ -16,6 +16,7 @@ namespace BrewDay.NancyFX.API
         {
             base.ApplicationStartup(container, pipelines);
             StaticConfiguration.DisableErrorTraces = false;
+            Nancy.Json.JsonSettings.MaxJsonLength = int.MaxValue;
         }
 
         protected override void ConfigureApplicationContainer(TinyIoCContainer container)
@@ -30,6 +31,7 @@ namespace BrewDay.NancyFX.API
         {
             base.ConfigureRequestContainer(container, context);
             container.Register<IDocumentSession>(GenerateRavenSession(container));
+            container.Register<IAsyncDocumentSession>(GenerateAsyncRavenSession(container));
         }
 
         private IDocumentStore GenerateRavenDocStore(TinyIoCContainer container)
@@ -45,6 +47,12 @@ namespace BrewDay.NancyFX.API
         {
             return container.Resolve<IDocumentStore>()
                     .OpenSession();
+        }
+
+        private IAsyncDocumentSession GenerateAsyncRavenSession(TinyIoCContainer container)
+        {
+            return container.Resolve<IDocumentStore>()
+                    .OpenAsyncSession();
         }
     }
 }
