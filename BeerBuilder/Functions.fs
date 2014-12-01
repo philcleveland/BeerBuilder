@@ -11,6 +11,8 @@
                 (31,0x5a0a02);(32,0x600903);(33,0x520907);(34,0x4c0505);(35,0x470606);(36,0x440607);(37,0x3f0708);(38,0x3b0607);(39,0x3a070b);(40,0x36080a)
             |] |> Map.ofSeq
 
+        
+
         //ounce
         [<Measure>] type oz
         //minute
@@ -90,4 +92,37 @@
         let aau wh aa =
             wh * aa
 
-                        
+        //Mash pH
+        //alk = CaCO3 ppm
+        //ca = Ca ppm
+        //mg = Mg ppm
+        //note ppm = mg/L
+        //recommended range 5.8 - 5.2
+        let pH alk ca mg = 
+            5.8 + (0.028 * ((alk * 0.056) - (ca * 0.04) - (mg * 0.033)))
+
+        //the weight of water lbs/gal at 60F
+        let weightOfWater = 8.3378
+
+        //boilTime = in hours
+        let evaporation boilTime =
+            1.0 - (boilTime * 0.05) //5% evaporation/hour
+
+        //amount of water lost in the spent grains
+        let grainWaterRetention grainInWeight =
+            let grainOut = grainInWeight * 0.4
+            let waterWeight = 4.0 * grainOut
+            waterWeight / weightOfWater
+
+        let requiredWater batchSize trubLoss grainWeight waterMashRatio boilTime equipLoss =
+            let finalBoil = batchSize + trubLoss
+            let shrinkage = 1.0 - 0.04 //4% shrinkage during cooling
+            let evap = evaporation boilTime
+            let grainWaterLoss = grainWaterRetention grainWeight
+
+            printfn "FB: %A SH: %A EV: %A EqL: %A GrL: %A" finalBoil shrinkage evap equipLoss grainWaterLoss
+
+            finalBoil / shrinkage / evap + equipLoss + grainWaterLoss
+
+        let convertQuartsToGal q =
+            q / 4.0
