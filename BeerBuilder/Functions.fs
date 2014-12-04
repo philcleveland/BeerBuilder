@@ -11,8 +11,6 @@
                 (31,0x5a0a02);(32,0x600903);(33,0x520907);(34,0x4c0505);(35,0x470606);(36,0x440607);(37,0x3f0708);(38,0x3b0607);(39,0x3a070b);(40,0x36080a)
             |] |> Map.ofSeq
 
-        
-
         //ounce
         [<Measure>] type oz
         //minute
@@ -111,7 +109,7 @@
         //amount of water lost in the spent grains
         let grainWaterRetention grainInWeight =
             let grainOut = grainInWeight * 0.4
-            let waterWeight = 4.0 * grainOut
+            let waterWeight = 4.0 * grainOut //mult by 4 since slurry is est at 80% H20 20% spent grains
             waterWeight / weightOfWater
 
         let requiredWater batchSize trubLoss grainWeight waterMashRatio boilTime equipLoss =
@@ -126,3 +124,34 @@
 
         let convertQuartsToGal q =
             q / 4.0
+
+        //convert specific gravity to gravity units
+        let gravUnitConv sg =
+            (sg - 1.0) * 1000.0
+
+        //Gravity Units to Specific Gravity
+        let GUtoSG gu = 
+            (gu / 1000.0) + 1.0
+
+        //Total Gravity
+        //volume in gallons
+        //gu = gravity units
+        let totalGravity (gu:float) (volume:float) = 
+            gu * volume
+        
+        //Gravity Units End
+        //guBeg =gravity units beginning
+        //volBeg= volume beginning
+        //volEnd = volume ending
+        let GUend guBeg volBeg volEnd =
+            (guBeg * volBeg) / volEnd
+
+        //Determines the amount of extract to add to hit target total gravity
+        //tgTarget = Total gravity target in GU
+        //tgMash = Measured Total gravity of Mash
+        //extractGU = the gravity units contributed by the malt extract
+        let Extractlbs (tgTarget:float)  (tgMash:float) (extractGU:float) =
+            (tgTarget - tgMash) / extractGU
+
+        let VolumeFinal (tgMash:float) (targetGU:float) = 
+            tgMash / targetGU
