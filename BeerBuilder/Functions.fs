@@ -2,7 +2,7 @@
 
     module Functions =
         open Domain
-            
+        open System
         let srmColorLookup =
             [|
                 (1,0xffe699);(2,0xffd878);(3,0xffca5a);(4,0xffbf42);(5,0xfbb123);(6,0xf8a600);(7,0xf39300);(8,0xea8f00);(9,0xe58500);(10,0xde7c00);
@@ -153,5 +153,37 @@
         let Extractlbs (tgTarget:float)  (tgMash:float) (extractGU:float) =
             (tgTarget - tgMash) / extractGU
 
+        //Calculates the final volume of wort given the mash gravity
+        //and the target gravity units
+        //tgMash = Measured Total gravity of Mash
+        //targetGU = target Gravity Units desired
         let VolumeFinal (tgMash:float) (targetGU:float) = 
             tgMash / targetGU
+
+        //Alpha Acid Units (AAU)
+        //weight = in oz
+        //alpha acid = percentage
+        let AAU (weight:float) (alphaAcid:float) = 
+            weight * alphaAcid
+
+        //http://www.howtobrew.com/section1/chapter5-5.html
+        //The numbers 1.65 and 0.00125 in f(G) were empirically derived to fit 
+        //the boil gravity (Gb) analysis data. In the f(T) equation, the number 
+        //-0.04 controls the shape of the utilization vs. time curve. The factor 
+        //4.15 controls the maximum utilization value. This number may be 
+        //adjusted to customize the curves to your own system. If you feel that 
+        //you are having a very vigorous boil or generally get more utilization 
+        //out of a given boil time for whatever reason, you can reduce the number 
+        //a small amount to 4 or 3.9. Likewise if you think that you are getting 
+        //less, then you can increase it by 1 or 2 tenths.
+        //(boilGravity:float) Specific gravity of the wort 
+        //(time:float) Length of time(minutes) hops are boiled
+        let HopUtilization (boilGravity:float) (time:float) =
+            let fGrav = 1.65 * 0.000125 ** (boilGravity - 1.0)
+            let fTime = (1.0 - System.Math.E**(-0.04 * time)) /  4.15
+            fGrav * fTime
+
+        let IBU (aau:float) (utilization:float) (volume:float)=
+            aau * utilization * 75. / volume
+
+        
